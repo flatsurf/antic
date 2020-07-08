@@ -34,7 +34,7 @@ void nf_init_randtest(nf_t nf, flint_rand_t state,
     else if (len <= 3 || n_randint(state, 30) == 0)
         len = 3; /* quadratic */
     else
-        len = 3 + n_randint(state, len-2);
+        len = 3 + (slong)n_randint(state, (ulong)len - 2);
 
     fmpz_poly_init(q);
     do {
